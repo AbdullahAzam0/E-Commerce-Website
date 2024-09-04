@@ -1,29 +1,38 @@
-.navbar{
+.navbar {
     display: flex;
-    justify-content: space-around;
-    padding: 16px;
-    box-shadow: 0 1px 3px -2px black;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #48484f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
 }
-.nav-logo{
+
+.nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+}
 
-}
 .nav-logo p {
-    color: #171717;
-    font-size: 38px;
-    font-weight: 600;
+    color: #f8f8f8;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
+
 .nav-menu {
-    display: flex;
+    display: flex; /* Show on larger screens */
     align-items: center;
     list-style: none;
-    gap: 50px;
-    color: #626262;
-    font-size: 20px;
+    gap: 40px;
+    color: #d1d1d1;
+    font-size: 18px;
     font-weight: 500;
 }
+
 .nav-menu li {
     display: flex;
     flex-direction: column;
@@ -31,45 +40,140 @@
     justify-content: center;
     gap: 3px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
-.nav-menu hr{
+
+.nav-menu li:hover {
+    color: #ffffff;
+}
+
+.nav-menu hr {
     border: none;
     width: 80%;
-    height: 3px;
+    height: 2px;
     border-radius: 10px;
-    background: #FF4141;
+    background: #ffce00;
 }
-.nav-login-cart{
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-login-cart {
     display: flex;
     align-items: center;
-    gap: 45px;
+    gap: 30px;
 }
-.nav-login-cart button {
-    width: 157px;
-    height: 58px;
+
+.nav-login-btn {
+    width: 140px;
+    height: 45px;
     outline: none;
-    border: 1px solid #7a7a7a ;
-    border-radius: 75px;
-    color: #515151;
-    font-size: 20px;
-    font-weight: 500;
-    background: white;
+    border: 1px solid #ffce00;
+    border-radius: 50px;
+    color: #ffce00;
+    background: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
     cursor: pointer;
 }
-.nav-login-cart button:active {
-    background: #f3f3f3;
 
+.nav-login-btn:hover {
+    background: #ffce00;
+    color: #1a1a1d;
 }
-.nav-cart-count{
-    width: 22px;
+
+.nav-cart-count {
+    width: 20px;
+    height: 20px;
     display: flex;
-    height: 22px;
     justify-content: center;
     align-items: center;
-    margin-top: -35px;
-    margin-left: -55px;
-    border-radius: 11px;
-    font-size: 14px;
-    background: red;
-    color: white; 
+    position: relative;
+    top: -10px;
+    right: 15px;
+    border-radius: 50%;
+    font-size: 12px;
+    background: #ff4141;
+    color: #ffffff;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none; /* Hidden on larger screens */
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Behind the menu but above the content */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-menu {
+        gap: 30px;
+    }
+
+    .nav-login-cart {
+        gap: 20px;
+    }
+
+    .nav-login-btn {
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        gap: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background: #48484f;
+        padding: 20px;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%); /* Hide off-screen */
+    }
+
+    .nav-menu.active {
+        display: flex;
+        transform: translateX(0); /* Show menu */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the toggle button */
+    }
+
+    .nav-login-cart {
+        margin-top: 10px;
+    }
 }

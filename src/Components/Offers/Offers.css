@@ -1,0 +1,103 @@
+.offers {
+  width: 70%;
+  height: 65vh;
+  display: flex;
+  margin: 150px auto;
+  padding: 0px 100px;
+  background: linear-gradient(120deg, #fff0f5, #e0ffff);
+  border-radius: 20px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.offers-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 50px;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.offers-left h1 {
+  color: #333;
+  font-size: 70px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.offers-left p {
+  color: #555;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.offers-left button {
+  width: 250px;
+  height: 60px;
+  border-radius: 30px;
+  background: #ff6f61;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.offers-left button:hover {
+  background-color: #ff4a4a;
+  transform: scale(1.05);
+}
+
+.offers-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 50px;
+  animation: slideInRight 1s ease-in-out;
+}
+
+.offers-right img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offers-right img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

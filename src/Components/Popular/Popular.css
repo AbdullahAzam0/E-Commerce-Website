@@ -1,0 +1,99 @@
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+  overflow-y: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.popular h1 {
+  color: #333;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  animation: slideInDown 0.8s ease-in-out;
+}
+
+.popular hr {
+  width: 100px;
+  height: 4px;
+  border-radius: 5px;
+  background: #ff6f61;
+  border: none;
+  animation: growWidth 1s ease-in-out;
+}
+
+.popular-item {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.popular-item:hover .item {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img {
+    display: flex;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes growWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
