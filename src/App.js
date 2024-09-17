@@ -6,10 +6,10 @@ import women_banner from "./Components/Assests/banner_women.png";
 import kid_banner from "./Components/Assests/banner_kids.png";
 import ShopCategory from "./pages/ShopCategory";
 import LoginSignup from "./pages/LoginSignup";
-import Cart from "./pages/Cart";
 import Product from "./pages/Product";
 import Shop from "./pages/Shop";
 import Footer from "./Components/Footer/Footer";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -32,13 +32,13 @@ function App() {
           />
 
           <Route path="/product" element={<Product />}>
-            <Route path=':productId' element={<Product />} />
+            <Route path=":productId" element={<Product />} />
           </Route>
 
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );
